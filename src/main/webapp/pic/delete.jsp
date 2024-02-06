@@ -34,7 +34,7 @@ p,li {
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JSP+MySQL刪除</title>
+<title>刪除數據</title>
 </head>
 <body>
     <div style="margin: auto; width: 80%">
@@ -47,19 +47,19 @@ p,li {
       
        try
        {
+    	   		String id=request.getParameter("id");
                 Class.forName("com.mysql.jdbc.Driver");
         
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/commodity", "root", "123456");
                   Statement st=conn.createStatement();
-                  String query = "truncate table comm";
+                  String query = "delete from comm where id=?";
                 	   
-
+  
                 	      // create the mysql insert preparedstatement
-                	      PreparedStatement preparedStmt = conn.prepareStatement(query);
+                	     PreparedStatement preparedStmt = conn.prepareStatement(query);
+                   
+                	      preparedStmt.setString (1, id);
                 	   
-                	    
-             
-
                 	      // execute the preparedstatement
                 	      preparedStmt.execute();
                 	      
