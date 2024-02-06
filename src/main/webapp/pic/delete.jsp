@@ -47,19 +47,19 @@ p,li {
       
        try
        {
-    	   		String id=request.getParameter("id");
                 Class.forName("com.mysql.jdbc.Driver");
         
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/commodity", "root", "123456");
                   Statement st=conn.createStatement();
-                  String query = "delete from comm where id=?";
+                  String query = "truncate table comm";
                 	   
-  
+
                 	      // create the mysql insert preparedstatement
-                	     PreparedStatement preparedStmt = conn.prepareStatement(query);
-                   
-                	      preparedStmt.setString (1, id);
+                	      PreparedStatement preparedStmt = conn.prepareStatement(query);
                 	   
+                	    
+             
+
                 	      // execute the preparedstatement
                 	      preparedStmt.execute();
                 	      
