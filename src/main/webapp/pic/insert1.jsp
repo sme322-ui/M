@@ -27,14 +27,18 @@ p,li {
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JSP+MySQL插入數據</title>
+<title>插入數據</title>
 </head>
 <script>
+
+
 function go()
 {
  window.history.go(-1);
 }
 setTimeout("go()",3000);
+
+
 </script>
 <body>
     <div style="margin: auto; width: 80%">
