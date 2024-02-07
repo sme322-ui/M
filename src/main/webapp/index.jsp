@@ -194,17 +194,8 @@ Ext.onReady(function(){
     rsC.close();  
     stmtC.close();  
     connC.close();  
-    
-    
     %>
-   
-   
-  
   </p>
-  <div id="map" style="width:80px;hright:60px"></div>
-  <script type="text/javascript">
-    var map = new GMap(document.getElementById("map"));
-    map.centerAndZoom(new GPoint(138.73123168945312,35.35657620196121),4);
   </script>
   
 </body>
