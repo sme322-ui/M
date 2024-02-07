@@ -183,7 +183,7 @@ Ext.onReady(function(){
         out.println(rsC.getString("prepTime")); 
         out.println("</th>");
         out.print("<th>");
-        out.print("<a href='/M/pic/delete2.jsp?id="+rsC.getString("id")+"' target='_top>刪除</a>);
+        out.print("<a href='/M/pic/delete2.jsp?id="+rsC.getString("id")+"' target='_top>刪除</a>");
         out.print("</th>);
         out.println("</tr>");
         
