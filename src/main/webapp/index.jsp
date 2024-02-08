@@ -33,18 +33,11 @@ p,li {
    text:align:center;
 }
 </style>
-<script src="http://maps.google.com/maps?file=api&v=1" type="text/javascript">
-
-
-
-function myrefresh()
-{
+<script language="JavaScript">
+function myrefresh(){
    window.location.reload();
 }
-setTimeout('myrefresh()',1000); 
-
-
-
+setTimeout('myrefresh()',5000); //指定1秒刷新一次
 </script>
 <meta charset="utf-8">
 <title>溫濕度紀錄/商品</title>
@@ -69,7 +62,7 @@ out.println("</div>");
 <script>
 
 Ext.onReady(function(){
-	Ext.MessageBox.confirm("提示","门票修改成功！",function(btn1){ 
+	Ext.MessageBox.confirm("提示","修改成功！",function(btn1){ 
 		window.win.close();}) 
 
 	Ext.get("btn1").on("click", function () {
@@ -111,7 +104,7 @@ Ext.onReady(function(){
     //建立Statement（負責執行sql語句）  
     Statement stmt = conn.createStatement();  
    
-    String sql="select * from temp where temperature<50&&temperature>31.90;";  
+    String sql="select * from temp order by timStamp desc limit 10;";  
     
     
     //獲得資料結果集合  
@@ -167,7 +160,7 @@ Ext.onReady(function(){
     out.println("<h1 style='width:100%'>商品列表</h1>");
     out.println("</div>");
     //依次遍歷結果集（表中的記錄）  
-    out.println("<p><center><table><colgroup span='3' style='background-color: yellow;'></colgroup><tr bgcolor='#FF44FF'><th bgcolor='#FF44FF'>id</th><th bgcolor='#FF44FF'>商品名稱</th><th bgcolor='#FF44FF'>準備時間</th></tr>");
+    out.println("<p><center><table><colgroup span='3' style='background-color: yellow;'></colgroup><tr bgcolor='#FF44FF'><th bgcolor='#FF44FF'>id</th><th bgcolor='#FF44FF'>商品名稱</th><th bgcolor='#FF44FF'>準備時間</th><th>刪除</th></tr>");
     while(rsC.next())  
     {   
     	
@@ -182,9 +175,9 @@ Ext.onReady(function(){
         out.println("<th>");
         out.println(rsC.getString("prepTime")); 
         out.println("</th>");
-        out.print("<th>");
-        out.print("<a href='/M/pic/delete2.jsp?id="+rsC.getString("id")+"' target='_top'>刪除</a>");
-        out.print("</th>");
+        out.println("<th>");
+       out.print("<a href='/M/pic/delete2.jsp?id="+rsC.getString("id")+"' target='_top'>刪除</a>");   
+        out.println("</th>");
         out.println("</tr>");
         
        
@@ -194,8 +187,17 @@ Ext.onReady(function(){
     rsC.close();  
     stmtC.close();  
     connC.close();  
+    
+    
     %>
+   
+   
+  
   </p>
+  <div id="map" style="width:80px;hright:60px"></div>
+  <script type="text/javascript">
+    var map = new GMap(document.getElementById("map"));
+    map.centerAndZoom(new GPoint(138.73123168945312,35.35657620196121),4);
   </script>
   
 </body>
