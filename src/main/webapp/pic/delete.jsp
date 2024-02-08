@@ -34,7 +34,7 @@ p,li {
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JSP+MySQL刪除</title>
+<title>刪除數據</title>
 </head>
 <body>
     <div style="margin: auto; width: 80%">
