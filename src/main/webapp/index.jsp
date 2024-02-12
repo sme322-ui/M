@@ -5,8 +5,8 @@
 
 <html xmlns="http://ww.w3.org/1999/xhtml">
 <head>
-	<script type="text/javascript" src="js/ext-all.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>        
+    <script type="text/javascript" src="js/ext-all.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>        
     <script type="text/javascript" src="js/ext-lang-zh_CN.js"></script>
     <link href="ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" >
     <script type="text/javascript" src="M.index.jsp"></script>
