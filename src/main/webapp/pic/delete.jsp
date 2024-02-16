@@ -47,7 +47,7 @@ p,li {
       
        try
        {
-                Class.forName("com.mysql.jdbc.Driver");
+                Class.forName("com.mysql.cj.jdbc.Driver");
         
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/commodity", "root", "123456");
                   Statement st=conn.createStatement();
