@@ -5,8 +5,8 @@
 
 <html xmlns="http://ww.w3.org/1999/xhtml">
 <head>
-    <script type="text/javascript" src="js/ext-all.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>        
+	<script type="text/javascript" src="js/ext-all.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>        
     <script type="text/javascript" src="js/ext-lang-zh_CN.js"></script>
     <link href="ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" >
     <script type="text/javascript" src="M.index.jsp"></script>
@@ -109,13 +109,15 @@ Ext.onReady(function(){
     
     //獲得資料結果集合  
     ResultSet rs = stmt.executeQuery(sql);  
-    
-    out.println("<li><a href='/M/pic/insert1.jsp' target='_top'>Egg Benedict</a></li>");
-    out.println("<li><a href='/M/pic/insert2.jsp' target='_top'>Mushroom Risotto</a></li>");
-    out.println("<li><a href='/M/pic/insert3.jsp' target='_top'>Full Breakfast</a></li>");
-    out.println("<li><a href='/M/pic/insert5.jsp' target='_top'>Ham_and_Egg_Sandwitch</a></li>");
-    out.println("<li><a href='/M/pic/delete.jsp' target='_top'><b>delete the goods</b></a></li>");
-    
+    out.println("<div style='margin:10px'>");
+    out.println("<ul class='list-group list-group-flush'>");
+    out.println("<div style='background-color:lightskyblue;width:100%'><li class='list-group-item'><a href='/M/pic/insert1.jsp' target='_top'>Egg Benedict</a></li></div>");
+    out.println("<div style='background-color:pink;width:100%'><li class='list-group-item'><a href='/M/pic/insert2.jsp' target='_top'>Mushroom Risotto</a></li></div>");
+    out.println("<div style='background-color:lightskyblue;width:100%'><li class='list-group-item'><a href='/M/pic/insert3.jsp' target='_top'>Full Breakfast</a></li></div>");
+    out.println("<div style='background-color:pink;width:100%'><li class='list-group-item'><a href='/M/pic/insert5.jsp' target='_top'>Ham_and_Egg_Sandwitch</a></li></div>");
+  
+    out.println("</ul>");
+    out.println("</div>");
     out.println("<style>table {width: 100%;}</style>");
     out.println("<style>div{text-align:justify;-moz-text-align-last:center;text-align-last:center;}</style>");
     out.println("<style>.marquee{overflow-x:-webkit-marquee;-webkit-marquee-direction:backwards;-webkit-marquee-style:scroll;-webkit-marquee-speed:slow;-webkit-marquee-repetition:infinite;}</style>");
@@ -182,6 +184,7 @@ Ext.onReady(function(){
         
        
     }  
+  out.println("<li class='list-group-item active'><a href='/M/pic/delete.jsp' target='_top'><b>資料重置</b></a></li>");
     out.println("</table></center></p>");
     //關閉連線  
     rsC.close();  
