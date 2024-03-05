@@ -112,9 +112,9 @@ Ext.onReady(function(){
     out.println("<div style='margin:10px'>");
     out.println("<ul class='list-group list-group-flush'>");
     out.println("<div style='background-color:lightskyblue;width:100%'><li class='list-group-item'><a href='/M/pic/insert1.jsp' target='_top'>Egg Benedict</a></li></div>");
-    out.println("<div style='background-color:pink;width:100%'><li class='list-group-item'><a href='/M/pic/insert2.jsp' target='_top'>Mushroom Risotto</a></li></div>");
+    out.println("<div style='background-color:yellow;width:100%'><li class='list-group-item'><a href='/M/pic/insert2.jsp' target='_top'>Mushroom Risotto</a></li></div>");
     out.println("<div style='background-color:lightskyblue;width:100%'><li class='list-group-item'><a href='/M/pic/insert3.jsp' target='_top'>Full Breakfast</a></li></div>");
-    out.println("<div style='background-color:pink;width:100%'><li class='list-group-item'><a href='/M/pic/insert5.jsp' target='_top'>Ham_and_Egg_Sandwitch</a></li></div>");
+    out.println("<div style='background-color:yellow;width:100%'><li class='list-group-item'><a href='/M/pic/insert5.jsp' target='_top'>Ham_and_Egg_Sandwitch</a></li></div>");
   
     out.println("</ul>");
     out.println("</div>");
