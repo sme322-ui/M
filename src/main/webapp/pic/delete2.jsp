@@ -53,16 +53,30 @@ p,li {
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/commodity", "root", "123456");
                   Statement st=conn.createStatement();
                   String query = "delete from comm where id=?";
-                	   
+                  String queryD1 = "SET @i=0;";
+                  String queryD2 = "UPDATE comm SET id=(@i:=@i+1);";
+                  String queryD3 = "ALTER TABLE comm AUTO_INCREMENT=0;";
+                 
+                  
   
                 	      // create the mysql insert preparedstatement
                 	     PreparedStatement preparedStmt = conn.prepareStatement(query);
+                	     PreparedStatement preparedStmtD1 = conn.prepareStatement(queryD1);
+                	     PreparedStatement preparedStmtD2 = conn.prepareStatement(queryD2);
+                	     PreparedStatement preparedStmtD3 = conn.prepareStatement(queryD3);
+                	     
+                	   
                    
                 	      preparedStmt.setString (1, id);
                 	   
                 	      // execute the preparedstatement
                 	      preparedStmt.execute();
+                	      preparedStmtD1.execute();
+                	      preparedStmtD2.execute();
+                	      preparedStmtD3.execute();
                 	      
+                	      
+              
                 	    
 //                  int i=st.executeUpdate("insert into comm values('"+id+"','"+name+"','"+prepTime);
                out.println("<h1 color='red'><center>購買商品刪除!</center></h1>");
