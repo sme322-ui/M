@@ -43,7 +43,7 @@ setTimeout('myrefresh()',5000); //指定1秒刷新一次
 <title>溫濕度紀錄/商品</title>
 </head>
 <body>
-<div style='background-color:pink;width:100%'>
+<div style='background-color:purple;width:100%'>
 <div class='marquee'>
 <h1>溫濕度商品資料</h1><br/>
 </div>
@@ -105,7 +105,9 @@ Ext.onReady(function(){
     Statement stmt = conn.createStatement();  
    
     String sql="select * from temp order by timStamp desc limit 10;";  
-    
+    String queryD1 = "SET @i=0;";
+    String queryD2 = "UPDATE comm SET id=(@i:=@i+1);";
+    String queryD3 = "ALTER TABLE comm AUTO_INCREMENT=0;";
     
     //獲得資料結果集合  
     ResultSet rs = stmt.executeQuery(sql);  
@@ -162,7 +164,7 @@ Ext.onReady(function(){
     out.println("<h1 style='width:100%'>商品列表</h1>");
     out.println("</div>");
     //依次遍歷結果集（表中的記錄）  
-    out.println("<p><center><table><colgroup span='3' style='background-color: yellow;'></colgroup><tr bgcolor='#FF44FF'><th bgcolor='#FF44FF'>id</th><th bgcolor='#FF44FF'>商品名稱</th><th bgcolor='#FF44FF'>準備時間</th><th>刪除</th></tr>");
+    out.println("<p><center><table><colgroup span='3' style='background-color: yellow;'></colgroup><tr bgcolor='#FF44FF'><th bgcolor='#FF44FF'>id</th><th bgcolor='#FF44FF'>商品名稱</th><th bgcolor='#FF44FF'>準備時間</th><th>資料刪除</th></tr>");
     while(rsC.next())  
     {   
     	
@@ -181,7 +183,7 @@ Ext.onReady(function(){
        out.print("<a href='/M/pic/delete2.jsp?id="+rsC.getString("id")+"' target='_top'>刪除</a>");   
         out.println("</th>");
         out.println("</tr>");
-        
+       
        
     }  
   out.println("<li class='list-group-item active'><a href='/M/pic/delete.jsp' target='_top'><b>資料重置</b></a></li>");
@@ -190,18 +192,7 @@ Ext.onReady(function(){
     rsC.close();  
     stmtC.close();  
     connC.close();  
-    
-    
-    %>
-   
-   
-  
+  %>
   </p>
-  <div id="map" style="width:80px;hright:60px"></div>
-  <script type="text/javascript">
-    var map = new GMap(document.getElementById("map"));
-    map.centerAndZoom(new GPoint(138.73123168945312,35.35657620196121),4);
-  </script>
-  
 </body>
 </html>
