@@ -1,7 +1,8 @@
 # M
 溫度 商品資訊
 
-![Screenshot 2024-03-21 at 6 11 39 PM](https://github.com/sme322-ui/M/assets/71810019/a2cfa1b5-54b3-408e-8a5a-2acae04234b3)
+![Screenshot 2024-03-26 at 9 08 03 PM](https://github.com/sme322-ui/M/assets/71810019/b049795f-2d72-4b06-9aed-e65ae5b86280)
+
 
 
 
