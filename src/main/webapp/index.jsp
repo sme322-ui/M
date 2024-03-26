@@ -37,7 +37,7 @@ p,li {
 function myrefresh(){
    window.location.reload();
 }
-setTimeout('myrefresh()',5000); //指定1秒刷新一次
+setTimeout('myrefresh()',5000); //指定5秒刷新一次
 </script>
 <meta charset="utf-8">
 <title>溫濕度紀錄/商品</title>
@@ -104,7 +104,7 @@ Ext.onReady(function(){
     //建立Statement（負責執行sql語句）  
     Statement stmt = conn.createStatement();  
    
-    String sql="select * from temp order by timStamp desc limit 10;";  
+    String sql="select * from temp order by id asc limit 10;";  
     String queryD1 = "SET @i=0;";
     String queryD2 = "UPDATE comm SET id=(@i:=@i+1);";
     String queryD3 = "ALTER TABLE comm AUTO_INCREMENT=0;";
@@ -134,7 +134,7 @@ Ext.onReady(function(){
     	out.println("<tr>");
         //依據資料庫中的欄位名列印資料  
         out.println("<th>");
-        out.println(rs.getString("timStamp")); 
+        out.println(rs.getString("id")); 
         out.println("</th>");
         out.println("<th>");
         out.println(rs.getString("temperature")); 
@@ -180,19 +180,21 @@ Ext.onReady(function(){
         out.println(rsC.getString("prepTime")); 
         out.println("</th>");
         out.println("<th>");
-       out.print("<a href='/M/pic/delete2.jsp?id="+rsC.getString("id")+"' target='_top'>刪除</a>");   
+        out.print("<a href='/M/pic/delete2.jsp?id="+rsC.getString("id")+"' target='_top'>刪除</a>");   
         out.println("</th>");
         out.println("</tr>");
        
        
     }  
-  out.println("<li class='list-group-item active'><a href='/M/pic/delete.jsp' target='_top'><b>資料重置</b></a></li>");
+    out.println("<li class='list-group-item active'><a href='/M/pic/delete.jsp' target='_top'><b>資料重置</b></a></li>");
     out.println("</table></center></p>");
     //關閉連線  
     rsC.close();  
     stmtC.close();  
     connC.close();  
-  %>
+    
+    
+    %>
   </p>
 </body>
 </html>
